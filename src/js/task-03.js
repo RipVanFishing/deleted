@@ -12,3 +12,21 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const imgListRef = document.querySelector(".gallery")
+console.log(imgListRef);
+
+const makeImgList = (images) => {
+  return images.map(image => {
+    const itemRef = document.createElement("li")
+    const imgRef = document.createElement("img")
+    imgRef.src = image.url;
+    imgRef.alt = image.alt;
+    itemRef.insertAdjacentElement("afterbegin",imgRef)
+    return itemRef;
+   })
+}
+
+
+
+console.log(makeImgList([...images]));
