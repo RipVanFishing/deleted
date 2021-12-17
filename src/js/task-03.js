@@ -13,20 +13,33 @@ const images = [
   },
 ];
 
-const imgListRef = document.querySelector(".gallery")
-console.log(imgListRef);
+const galleryRef = document.querySelector(".gallery");
 
-const makeImgList = (images) => {
-  return images.map(image => {
-    const itemRef = document.createElement("li")
-    const imgRef = document.createElement("img")
-    imgRef.src = image.url;
-    imgRef.alt = image.alt;
-    itemRef.insertAdjacentElement("afterbegin",imgRef)
-    return itemRef;
-   })
-}
+const itemsRef = images.map((image) => `<li class = "list-item"> <img class = "img-item" src="${image.url}" alt="${image.alt}" width = 320 height = 240> </li>`).join('');
 
+console.log(itemsRef)
+
+galleryRef.insertAdjacentHTML("afterbegin", itemsRef);
+galleryRef.style.listStyle = "none";
+galleryRef.style.display = "flex";
+galleryRef.style.justifyContent = "space-between"
+galleryRef.style.width = "1200px";
+galleryRef.style.margin = 0;
 
 
-console.log(makeImgList([...images]));
+console.log(galleryRef);
+
+// itemsRef.innerHTML = galleryRef;
+
+// const technologies = ["HTML", "CSS", "JavaScript", "React", "Node"];
+// const list = document.querySelector(".list");
+
+// const markup = technologies
+//   .map((technology) => `<li class="list-item">${technology}</li>`)
+//   .join("");
+
+// // Check the console, you'll see a single string with HTML tags
+// console.log(markup);
+
+// // Adding all the markup in one operation
+// list.innerHTML = markup;
