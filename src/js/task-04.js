@@ -12,14 +12,14 @@ console.log(spanRef);
 btnIncrRef.addEventListener ("click", () => {
     console.log("Клик пошел!")
     counterValue += 1;
-    spanRef.innerHTML = counterValue;
+    spanRef.textContent = counterValue;
    
 });
 
 btnDecrRef.addEventListener("click", () => {
     console.log("Клик ушел!")
     counterValue -= 1;
-    spanRef.innerHTML = counterValue;
+    spanRef.textContent = counterValue;
 });
 
 
