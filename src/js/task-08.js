@@ -13,12 +13,12 @@ function onSubmitForm(event) {
     return alert("Все поля должны быть заполнены!");
     }  
     const newData = {
-        email: value,
-        password:value
+        email: email.value,
+        password: password.value
     }
     console.log(newData);
- console.log(`Email: ${email.value}, Password: ${password.value}`);
+ 
     event.currentTarget.reset();
 
-    
+     
 }
